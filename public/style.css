@@ -1,0 +1,383 @@
+/* ==========================================
+   LOGIN / NAV
+========================================== */
+
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.login-btn,
+.logout-btn {
+    border: none;
+    padding: 12px 18px;
+    border-radius: 30px;
+    cursor: pointer;
+    font-weight: bold;
+}
+
+.login-btn {
+    background: white;
+    border: 1px solid #ddd;
+}
+
+.logout-btn {
+    background: #ff4d00;
+    color: white;
+}
+
+.hidden {
+    display: none !important;
+}
+
+
+/* ==========================================
+   LOGIN MODAL
+========================================== */
+
+.login-modal {
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 0, 0, 0.65);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 2000;
+}
+
+.login-modal.show {
+    display: flex;
+}
+
+.login-box {
+    width: 420px;
+    max-width: 90%;
+
+    background: white;
+
+    padding: 45px;
+
+    border-radius: 25px;
+
+    position: relative;
+
+    box-shadow:
+        0 20px 80px rgba(0, 0, 0, 0.2);
+}
+
+.login-box h2 {
+    font-size: 42px;
+    margin-bottom: 10px;
+}
+
+.login-description {
+    color: #777;
+    margin-bottom: 30px;
+}
+
+.close-login {
+    position: absolute;
+
+    right: 20px;
+    top: 15px;
+
+    border: none;
+    background: none;
+
+    font-size: 32px;
+
+    cursor: pointer;
+}
+
+#loginForm {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#loginForm input {
+    width: 100%;
+
+    padding: 15px;
+
+    border: 1px solid #ddd;
+
+    border-radius: 10px;
+
+    font-size: 15px;
+
+    outline: none;
+}
+
+#loginForm input:focus {
+    border-color: #ff4d00;
+}
+
+.submit-login {
+    border: none;
+
+    background: #111;
+    color: white;
+
+    padding: 16px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+
+    margin-top: 10px;
+}
+
+.submit-login:hover {
+    background: #ff4d00;
+}
+
+.login-message {
+    margin-top: 20px;
+
+    color: #ff4d00;
+
+    font-size: 14px;
+}
+
+
+/* ==========================================
+   CTF ARTICLE
+========================================== */
+
+.ctf-section {
+    margin-top: 80px;
+
+    padding: 60px 30px;
+
+    background: #111;
+
+    color: white;
+
+    border-radius: 25px;
+
+    text-align: center;
+
+    position: relative;
+
+    overflow: hidden;
+}
+
+.ctf-section::before {
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    background:
+        repeating-linear-gradient(
+            45deg,
+            transparent,
+            transparent 10px,
+            rgba(255,255,255,0.02) 10px,
+            rgba(255,255,255,0.02) 20px
+        );
+
+    pointer-events: none;
+}
+
+.ctf-lock {
+    font-size: 45px;
+
+    margin-bottom: 15px;
+}
+
+.ctf-section > p {
+    color: #ff4d00;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.ctf-section h2 {
+    font-size: 42px;
+
+    margin: 15px 0;
+}
+
+.ctf-section span {
+    display: block;
+
+    color: #aaa;
+
+    margin-bottom: 25px;
+}
+
+#buyCtf {
+    border: none;
+
+    background: #ff4d00;
+
+    color: white;
+
+    padding: 16px 30px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+#buyCtf:hover {
+    transform: translateY(-2px);
+}
+
+#buyCtf:disabled {
+    opacity: 0.6;
+
+    cursor: not-allowed;
+}
+
+.ctf-section small {
+    display: block;
+
+    margin-top: 15px;
+
+    color: #666;
+}
+
+
+/* ==========================================
+   FLAG MODAL
+========================================== */
+
+.flag-modal {
+    position: fixed;
+
+    inset: 0;
+
+    background: rgba(0, 0, 0, 0.8);
+
+    display: none;
+
+    align-items: center;
+    justify-content: center;
+
+    z-index: 3000;
+}
+
+.flag-modal.show {
+    display: flex;
+}
+
+.flag-box {
+    width: 520px;
+
+    max-width: 90%;
+
+    background: white;
+
+    padding: 50px;
+
+    border-radius: 25px;
+
+    text-align: center;
+}
+
+.flag-icon {
+    font-size: 50px;
+
+    margin-bottom: 15px;
+}
+
+.flag-box > p {
+    color: #ff4d00;
+
+    font-size: 12px;
+
+    font-weight: bold;
+
+    letter-spacing: 3px;
+}
+
+.flag-box h2 {
+    font-size: 40px;
+
+    margin: 10px 0;
+}
+
+.flag-box > span {
+    color: #777;
+}
+
+.flag {
+    background: #111;
+
+    color: #ff4d00;
+
+    padding: 20px;
+
+    border-radius: 12px;
+
+    margin: 30px 0;
+
+    overflow-x: auto;
+}
+
+.flag code {
+    font-size: 17px;
+    font-weight: bold;
+}
+
+#closeFlag {
+    border: none;
+
+    background: #111;
+
+    color: white;
+
+    padding: 14px 25px;
+
+    border-radius: 30px;
+
+    cursor: pointer;
+
+    font-weight: bold;
+}
+
+
+/* ==========================================
+   MOBILE
+========================================== */
+
+@media (max-width: 650px) {
+
+    .nav-right {
+        gap: 5px;
+    }
+
+    .login-btn,
+    .logout-btn {
+        padding: 9px 12px;
+        font-size: 12px;
+    }
+
+    .cart-btn {
+        padding: 10px 12px;
+    }
+
+    .ctf-section h2 {
+        font-size: 30px;
+    }
+
+    .login-box {
+        padding: 35px 25px;
+    }
+
+}

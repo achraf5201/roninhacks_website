@@ -1,0 +1,600 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>SOLE - Premium Shoes</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+
+    <header class="navbar">
+
+        <a href="#" class="logo">
+            SOLE<span>.</span>
+        </a>
+
+        <nav>
+            <a href="#home">Home</a>
+            <a href="#shop">Shop</a>
+            <a href="#categories">Categories</a>
+            <a href="#about">About</a>
+        </nav>
+
+        <div class="nav-right">
+
+            <button class="login-btn" id="loginBtn">
+                Login
+            </button>
+
+            <button class="logout-btn hidden" id="logoutBtn">
+                Logout
+            </button>
+
+            <button class="cart-btn" id="cartBtn">
+                🛒 Cart
+                <span id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- HERO -->
+
+    <section class="hero" id="home">
+
+        <div class="hero-content">
+
+            <p class="small-title">
+                NEW COLLECTION 2026
+            </p>
+
+            <h1>
+                Step Into<br>
+                <span>Something Better.</span>
+            </h1>
+
+            <p class="hero-text">
+                Discover premium sneakers designed for
+                comfort, performance and everyday style.
+            </p>
+
+            <a href="#shop" class="hero-btn">
+                Shop Now →
+            </a>
+
+        </div>
+
+        <div class="hero-image">
+
+            <img
+                src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=1000&q=80"
+                alt="Red sneaker"
+            >
+
+        </div>
+
+    </section>
+
+
+    <!-- CATEGORIES -->
+
+    <section class="categories" id="categories">
+
+        <div class="section-heading">
+
+            <p>EXPLORE</p>
+
+            <h2>
+                Shop By Category
+            </h2>
+
+        </div>
+
+        <div class="category-list">
+
+            <button
+                class="category active"
+                data-category="all"
+            >
+                All Shoes
+            </button>
+
+            <button
+                class="category"
+                data-category="running"
+            >
+                Running
+            </button>
+
+            <button
+                class="category"
+                data-category="basketball"
+            >
+                Basketball
+            </button>
+
+            <button
+                class="category"
+                data-category="casual"
+            >
+                Casual
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- PRODUCTS -->
+
+    <section class="products-section" id="shop">
+
+        <div class="section-heading">
+
+            <p>OUR COLLECTION</p>
+
+            <h2>
+                Featured Shoes
+            </h2>
+
+        </div>
+
+        <div class="products" id="products">
+
+            <article
+                class="product-card"
+                data-category="running"
+            >
+
+                <div class="product-image">
+
+                    <span class="badge">
+                        NEW
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1542291026-7eec264c27ff?auto=format&fit=crop&w=700&q=80"
+                        alt="Air Runner"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Running
+                    </p>
+
+                    <h3>
+                        Air Runner X
+                    </h3>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            $129
+                        </strong>
+
+                        <button
+                            class="add-btn"
+                            data-name="Air Runner X"
+                            data-price="129"
+                            data-id="1"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article
+                class="product-card"
+                data-category="casual"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1549298916-b41d501d3772?auto=format&fit=crop&w=700&q=80"
+                        alt="Street Classic"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Casual
+                    </p>
+
+                    <h3>
+                        Street Classic
+                    </h3>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            $99
+                        </strong>
+
+                        <button
+                            class="add-btn"
+                            data-name="Street Classic"
+                            data-price="99"
+                            data-id="2"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article
+                class="product-card"
+                data-category="basketball"
+            >
+
+                <div class="product-image">
+
+                    <span class="badge">
+                        HOT
+                    </span>
+
+                    <img
+                        src="https://images.unsplash.com/photo-1552346154-21d32810aba3?auto=format&fit=crop&w=700&q=80"
+                        alt="Court Pro"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Basketball
+                    </p>
+
+                    <h3>
+                        Court Pro
+                    </h3>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            $149
+                        </strong>
+
+                        <button
+                            class="add-btn"
+                            data-name="Court Pro"
+                            data-price="149"
+                            data-id="3"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+
+            <article
+                class="product-card"
+                data-category="running"
+            >
+
+                <div class="product-image">
+
+                    <img
+                        src="https://images.unsplash.com/photo-1600185365483-26d7a4cc7519?auto=format&fit=crop&w=700&q=80"
+                        alt="Velocity Max"
+                    >
+
+                </div>
+
+                <div class="product-info">
+
+                    <p class="product-category">
+                        Running
+                    </p>
+
+                    <h3>
+                        Velocity Max
+                    </h3>
+
+                    <div class="product-bottom">
+
+                        <strong>
+                            $179
+                        </strong>
+
+                        <button
+                            class="add-btn"
+                            data-name="Velocity Max"
+                            data-price="179"
+                            data-id="4"
+                        >
+                            +
+                        </button>
+
+                    </div>
+
+                </div>
+
+            </article>
+
+        </div>
+
+
+        <!-- SECRET CTF ARTICLE -->
+
+        <div
+            class="ctf-section"
+            id="ctfArticle"
+        >
+
+            <div class="ctf-lock">
+                🔐
+            </div>
+
+            <p>
+                EXCLUSIVE
+            </p>
+
+            <h2>
+                CTF VIP Article
+            </h2>
+
+            <span>
+                $9999
+            </span>
+
+            <button id="buyCtf">
+                Buy Article →
+            </button>
+
+            <small>
+                Authentication required
+            </small>
+
+        </div>
+
+    </section>
+
+
+    <!-- PROMO -->
+
+    <section class="promo" id="about">
+
+        <div>
+
+            <p>
+                LIMITED OFFER
+            </p>
+
+            <h2>
+                20% OFF YOUR<br>
+                FIRST ORDER
+            </h2>
+
+            <button id="promoBtn">
+                Get The Deal →
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOTER -->
+
+    <footer>
+
+        <div class="footer-logo">
+            SOLE<span>.</span>
+        </div>
+
+        <p>
+            Premium shoes for every step.
+        </p>
+
+        <div class="footer-links">
+
+            <a href="#">
+                Instagram
+            </a>
+
+            <a href="#">
+                Facebook
+            </a>
+
+            <a href="#">
+                Contact
+            </a>
+
+        </div>
+
+        <p class="copyright">
+            © 2026 SOLE. All rights reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- LOGIN MODAL -->
+
+    <div
+        class="login-modal"
+        id="loginModal"
+    >
+
+        <div class="login-box">
+
+            <button
+                class="close-login"
+                id="closeLogin"
+            >
+                ×
+            </button>
+
+            <p class="small-title">
+                SOLE MEMBERS
+            </p>
+
+            <h2>
+                Sign In
+            </h2>
+
+            <p class="login-description">
+                Sign in to continue shopping.
+            </p>
+
+            <form id="loginForm">
+
+                <input
+                    type="text"
+                    id="username"
+                    placeholder="Username"
+                    autocomplete="off"
+                    required
+                >
+
+                <input
+                    type="password"
+                    id="password"
+                    placeholder="Password"
+                    required
+                >
+
+                <button
+                    type="submit"
+                    class="submit-login"
+                >
+                    Sign In →
+                </button>
+
+            </form>
+
+            <p
+                class="login-message"
+                id="loginMessage"
+            ></p>
+
+        </div>
+
+    </div>
+
+
+    <!-- CART MODAL -->
+
+    <div
+        class="cart-modal"
+        id="cartModal"
+    >
+
+        <div class="cart-box">
+
+            <button
+                class="close-cart"
+                id="closeCart"
+            >
+                ×
+            </button>
+
+            <h2>
+                Your Cart
+            </h2>
+
+            <div id="cartItems">
+
+                <p class="empty-cart">
+                    Your cart is empty.
+                </p>
+
+            </div>
+
+            <div class="cart-total">
+
+                <span>
+                    Total
+                </span>
+
+                <strong>
+                    $<span id="cartTotal">0</span>
+                </strong>
+
+            </div>
+
+            <button
+                class="checkout-btn"
+                id="checkoutBtn"
+            >
+                Checkout
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- FLAG MODAL -->
+
+    <div
+        class="flag-modal"
+        id="flagModal"
+    >
+
+        <div class="flag-box">
+
+            <div class="flag-icon">
+                🚩
+            </div>
+
+            <p>
+                CTF COMPLETE
+            </p>
+
+            <h2>
+                Congratulations!
+            </h2>
+
+            <span>
+                You successfully purchased the secret article.
+            </span>
+
+            <div class="flag">
+                <code id="flagText"></code>
+            </div>
+
+            <button id="closeFlag">
+                Continue →
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <script src="script.js"></script>
+
+</body>
+
+</html>
