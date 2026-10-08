@@ -97,6 +97,12 @@ app.post("/api/login", (req, res) => {
             message: "Username and password are required."
         });
     }
+    // else {
+    //     return res.status(200).json({
+    //         success : true,
+    //         message : "Welcome a W9"
+    //     })
+    // }
 
     /*
      * ============================================================
@@ -117,33 +123,45 @@ app.post("/api/login", (req, res) => {
         SELECT id, username
         FROM users
         WHERE username = '${username}'
-        AND password = '${password}'
+        AND password = '${password}' 
         LIMIT 1
     `;
 
     console.log("[CTF] Login query:");
     console.log(query);
 
-    try {
-        const user = db.prepare(query).get();
+   try {
+    const user = db.prepare(query).get();
 
-        if (!user) {
-            return res.status(401).json({
+    if (!user) {
+        return res.status(401).json({
+            success: false,
+            message: "Invalid username or password."
+        });
+    }
+
+    req.session.user = {
+        id: user.id,
+        username: user.username
+    };
+
+    req.session.save((err) => {
+        if (err) {
+            console.error("Session save error:", err);
+            return res.status(500).json({
                 success: false,
-                message: "Invalid username or password."
+                message: "Failed to save session"
             });
         }
 
-        req.session.user = {
-            id: user.id,
-            username: user.username
-        };
+        console.log("Session saved:", req.session);
 
-        res.json({
+        return res.json({
             success: true,
             message: `Welcome ${user.username}!`,
             user: user.username
         });
+    });
 
     } catch (error) {
         console.log(error);

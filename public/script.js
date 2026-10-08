@@ -282,6 +282,9 @@ loginForm.addEventListener("submit", async event => {
 
             return;
         }
+        // else {
+        //     alert(data.message)
+        // }
 
 
         currentUser =
@@ -350,7 +353,7 @@ function updateUserInterface() {
 
 logoutBtn.addEventListener("click", async () => {
 
-    await fetch("/api/logout", {
+    await fetch("http://localhost:3000/api/logout", {
         method: "POST"
     });
 
@@ -371,7 +374,7 @@ async function checkSession() {
     try {
 
         const response =
-            await fetch("/api/me");
+            await fetch("http://localhost:3000/api/me");
 
         const data =
             await response.json();
@@ -425,7 +428,7 @@ buyCtf.addEventListener("click", async () => {
     try {
 
         const response =
-            await fetch("/api/purchase", {
+            await fetch("http://localhost:3000/api/purchase", {
 
                 method: "POST",
 
