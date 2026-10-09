@@ -5,9 +5,9 @@ const path = require("path");
 const cors = require("cors");
 
 const app = express();
-const PORT = 3000;
+const PORT = 3001;
 
-app.use(cors()); 
+app.use(cors());
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
@@ -23,8 +23,7 @@ app.use(
     })
 );
 
-app.use(express.static(path.join(__dirname, "public")));
-
+app.use(express.static(__dirname));
 // ================================
 // DATABASE
 // ================================
@@ -130,38 +129,39 @@ app.post("/api/login", (req, res) => {
     console.log("[CTF] Login query:");
     console.log(query);
 
-   try {
-    const user = db.prepare(query).get();
+    try {
+        const user = db.prepare(query).get();
 
-    if (!user) {
-        return res.status(401).json({
-            success: false,
-            message: "Invalid username or password."
-        });
-    }
-
-    req.session.user = {
-        id: user.id,
-        username: user.username
-    };
-
-    req.session.save((err) => {
-        if (err) {
-            console.error("Session save error:", err);
-            return res.status(500).json({
+        if (!user) {
+            return res.status(401).json({
                 success: false,
-                message: "Failed to save session"
+                message: "Invalid username or password."
             });
         }
 
-        console.log("Session saved:", req.session);
+        req.session.user = {
+            id: user.id,
+            username: user.username
+        };
 
-        return res.json({
-            success: true,
-            message: `Welcome ${user.username}!`,
-            user: user.username
+        req.session.save((err) => {
+            if (err) {
+                console.error("Session save error:", err);
+                return res.status(500).json({
+                    success: false,
+                    message: "Failed to save session"
+                });
+            }
+
+            console.log("Session saved:", req.session);
+
+            return res.json({
+                success: true,
+                message: `Welcome ${user.username}!`,
+                user: user.username,
+                flag: "achraf{sql1234-kdn548}"
+            });
         });
-    });
 
     } catch (error) {
         console.log(error);
@@ -186,7 +186,8 @@ app.get("/api/me", (req, res) => {
 
     res.json({
         loggedIn: true,
-        user: req.session.user
+        user: req.session.user,
+        flag: "achraf{maflag_mawalo_zid_9alab}"
     });
 });
 
@@ -259,7 +260,7 @@ app.post("/api/purchase", (req, res) => {
             success: true,
             purchased: true,
             message: "Congratulations! You bought the secret article.",
-            flag: "CTF{achraf_sql_injection_sole}"
+            flag: "achraf{sql_injection_sole}"
         });
     }
 

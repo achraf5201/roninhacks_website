@@ -255,7 +255,7 @@ loginForm.addEventListener("submit", async event => {
     try {
 
         const response =
-            await fetch("http://localhost:3000/api/login", {
+            await fetch("http://localhost:3001/api/login", {
 
                 method: "POST",
 
@@ -353,7 +353,7 @@ function updateUserInterface() {
 
 logoutBtn.addEventListener("click", async () => {
 
-    await fetch("http://localhost:3000/api/logout", {
+    await fetch("http://localhost:3001/api/logout", {
         method: "POST"
     });
 
@@ -374,7 +374,7 @@ async function checkSession() {
     try {
 
         const response =
-            await fetch("http://localhost:3000/api/me");
+            await fetch("http://localhost:3001/api/me");
 
         const data =
             await response.json();
@@ -428,7 +428,7 @@ buyCtf.addEventListener("click", async () => {
     try {
 
         const response =
-            await fetch("http://localhost:3000/api/purchase", {
+            await fetch("http://localhost:3001/api/purchase", {
 
                 method: "POST",
 
